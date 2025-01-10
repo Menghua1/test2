@@ -9,6 +9,7 @@ workflows:
       - azd: provision
       - azd: deploy --all
 pipeline:
+  provider: github
   variables:
       - azure_variables1
       - azure_variables2
