@@ -8,10 +8,13 @@ workflows:
     steps:
       - azd: provision
       - azd: deploy --all
-principal:
+pipeline:
   variables:
-    API_BASE_URL: 111111111111
-    APPLICATIONINSIGHTS_CONNECTION_STRING: 222222222222222222
+      - azure_variables1
+      - azure_variables2
+  secrets:
+      - azure_secret1
+      - azure_sercret2
 
 services:
   web:
